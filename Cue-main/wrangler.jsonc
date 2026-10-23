@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "cue",
+  "compatibility_date": "2026-10-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": "./out",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cue-production",
+      "database_id": "00000000000000000000000000000000",
+      "preview_database_id": "00000000000000000000000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "ALEXA_SKILL_ID": "",
+    "ALEXA_CLIENT_ID": "",
+    "ALEXA_REDIRECT_URIS": ""
+  }
+}

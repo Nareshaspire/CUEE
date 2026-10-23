@@ -1,0 +1,111 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "cue production",
+      "intents": [
+        {
+          "name": "StatusIntent",
+          "slots": [
+            { "name": "run", "type": "AMAZON.SearchQuery" }
+          ],
+          "samples": [
+            "what is the status",
+            "how is production going",
+            "what is the status of {run}",
+            "give me an update on {run}"
+          ]
+        },
+        {
+          "name": "NextStepsIntent",
+          "slots": [
+            { "name": "run", "type": "AMAZON.SearchQuery" }
+          ],
+          "samples": [
+            "what can I do next",
+            "what is ready",
+            "what can I work on",
+            "what can I do next for {run}"
+          ]
+        },
+        {
+          "name": "WaitingIntent",
+          "slots": [
+            { "name": "run", "type": "AMAZON.SearchQuery" }
+          ],
+          "samples": [
+            "what is waiting",
+            "what is still cooling",
+            "what is waiting for {run}"
+          ]
+        },
+        {
+          "name": "BlockersIntent",
+          "slots": [
+            { "name": "run", "type": "AMAZON.SearchQuery" }
+          ],
+          "samples": [
+            "what is blocked",
+            "what is holding up production",
+            "what is blocked in {run}"
+          ]
+        },
+        {
+          "name": "CustomerUpdateIntent",
+          "slots": [
+            { "name": "run", "type": "AMAZON.SearchQuery" }
+          ],
+          "samples": [
+            "draft a customer update",
+            "draft an update for {run}",
+            "write a customer update"
+          ]
+        },
+        {
+          "name": "TaskUpdateIntent",
+          "slots": [
+            { "name": "task", "type": "AMAZON.SearchQuery" },
+            { "name": "state", "type": "CUE_TaskState" },
+            { "name": "run", "type": "AMAZON.SearchQuery" }
+          ],
+          "samples": [
+            "propose to mark {task} {state}",
+            "propose {task} as {state}",
+            "mark {task} {state}"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "CUE_TaskState",
+          "values": [
+            { "name": { "value": "started" } },
+            { "name": { "value": "in progress" } },
+            { "name": { "value": "waiting" } },
+            { "name": { "value": "completed" } },
+            { "name": { "value": "done" } }
+          ]
+        }
+      ]
+    }
+  }
+}
